@@ -1,0 +1,128 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import logo from '../../public/images/logo.png';
+import logoPro from '../../public/images/logopro.svg';
+---
+
+<Layout title='Welcome to Astro.'>
+  <section class='relative background h-screen w-screen overflow-y-hidden'>
+    <!-- Fondo con imagen -->
+    <div
+      class='absolute inset-0 bg-cover bg-center bg-fixed filter blur-[5px] z-[-10]'
+      style='background-image: url("/images/bg.jpg")'
+    >
+    </div>
+
+    <div class='absolute h-screen w-screen border-4 border-[#FF4D00] -z-10'>
+    </div>
+
+    <!-- Contenido encima del fondo -->
+    <div class='relative z-10 h-screen'>
+      <!-- Logo -->
+      <div class='pt-4 left-10'>
+        <Image src={logo} alt='Logo frtgear.com' />
+      </div>
+
+      <!-- Barras blancas -->
+      <div class='absolute top-0 bg-white w-[500px] h-[40px] -z-10'></div>
+      <div class='absolute top-12 bg-white w-[450px] h-[40px] -z-10'></div>
+      <div class='absolute top-24 bg-white w-[400px] h-[40px] -z-10'></div>
+
+      <!-- Tarjeta de contacto -->
+      <section class='mt-[280px] md:w-[40%] ml-auto'>
+        <div class='card-contact'>
+          <div
+            class='font-Aero text-white bg-[#FF4D00] text-3xl pr-[150px] p-2'
+          >
+            Contacto
+          </div>
+          <div
+            class='bg-[#0000001e] h-28 text-white text-2xl flex justify-center items-center'
+          >
+            <div class='animate-pulse mr-5'>
+              <svg xmlns='http://www.w3.org/2000/svg' width='40' height='36'>
+                <path
+                  d='M20.097 10H0v15.933h20.097V36L40 18.037 20.097 0v10z'
+                  fill='#FF4D00'></path>
+              </svg>
+            </div>
+            <a href='mailto:sales@frtgear.com'>sales@frtgear.com</a>
+          </div>
+        </div>
+
+        <div class='card-balls'>
+          <div class='font-Aero text-white bg-[#FF4D00] w-full text-3xl p-2'>
+            Distribuidor oficial
+          </div>
+          <div
+            class='bg-[#0000001e] h-28 text-white text-2xl flex justify-center items-center'
+          >
+            <Image src={logoPro} alt={'logo pro-shar'} />
+          </div>
+        </div>
+      </section>
+
+      <!-- Marquesina -->
+      <div class='absolute bottom-0 bg-white w-full'>
+        <div class='marquee-container'>
+          <div class='marquee-content'>
+            <span class='text font-Aero text-7xl uppercase'>
+              - Web en construccion -
+            </span>
+            <span class='text font-Aero text-7xl uppercase'>
+              - Site em desenvolvimento -
+            </span>
+            <span class='text font-Aero text-7xl uppercase'>
+              - Web en construccion -
+            </span>
+            <span class='text font-Aero text-7xl uppercase'>
+              - Site em desenvolvimento -
+            </span>
+            <span class='text font-Aero text-7xl uppercase'>
+              - Web en construccion -
+            </span>
+            <span class='text font-Aero text-7xl uppercase'>
+              - Site em desenvolvimento -
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .background {
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    .blur {
+      filter: blur(5px);
+    }
+
+    .marquee-container {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .marquee-content {
+      display: flex;
+      animation: marquee 10s linear infinite;
+    }
+
+    .text {
+      white-space: nowrap;
+    }
+
+    @keyframes marquee {
+      0% {
+        transform: translateX(0%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+  </style>
+</Layout>

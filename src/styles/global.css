@@ -1,0 +1,9 @@
+@font-face {
+  font-family: 'aerobus';
+  font-display: swap;
+  src: local('aerobus'), url('/fonts/aerobus.ttf') format('truetype');
+}
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+}
