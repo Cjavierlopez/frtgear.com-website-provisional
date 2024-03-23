@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { Image } from 'astro:assets';
-import logo from '../../public/images/logo.png';
+import logo from '../../public/images/logo.svg';
 ---
 
 <Layout title='FRTGear.com - Tu distribuidor de paintball favorito'>
@@ -19,24 +19,16 @@ import logo from '../../public/images/logo.png';
     <!-- Contenido encima del fondo -->
     <div class='relative z-10 h-screen'>
       <!-- Logo -->
-      <div class='pt-4 left-10'>
+      <div class='py-4 left-10'>
+        <div
+          class='absolute top-0 w-full h-full max-w-[400px] max-h-[170px] bg-[#ffffff70] blur-2xl -z-10'
+        >
+        </div>
         <Image src={logo} alt='Logo frtgear.com' />
       </div>
 
-      <!-- Barras blancas -->
-      <div class='absolute top-0 bg-white w-full max-w-[500px] h-[40px] -z-10'>
-      </div>
-      <div
-        class='absolute top-12 bg-white w-[90%] max-w-[450px] h-[40px] -z-10'
-      >
-      </div>
-      <div
-        class='absolute top-24 bg-white w-[80%] max-w-[400px] h-[40px] -z-10'
-      >
-      </div>
-
       <!-- Tarjeta de contacto -->
-      <section class='my-[74px] lg:mt-[20vw] md:w-[40%] ml-auto'>
+      <section class='my-[74px] lg:mb-8 lg:mt-[20vw] md:w-[40%] ml-auto'>
         <div class='card-contact'>
           <div
             class='font-Aero text-white bg-[#FF4D00] text-3xl pr-[150px] p-2'
